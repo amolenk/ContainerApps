@@ -19,12 +19,12 @@
   "resources": [
   {
       "name": "queuereader",
-      "type": "Microsoft.Web/containerApps",
-      "apiVersion": "2021-03-01",
+      "type": "Microsoft.App/containerApps",
+      "apiVersion": "2022-03-01",
       "kind": "containerapp",
       "location": "[parameters('location')]",
       "properties": {
-          "kubeEnvironmentId": "[resourceId('Microsoft.Web/kubeEnvironments', parameters('environment_name'))]",
+          "managedEnvironmentId": "[resourceId('Microsoft.App/managedEnvironments', parameters('environment_name'))]",
           "configuration": {
               "activeRevisionsMode": "single",
               "secrets": [
